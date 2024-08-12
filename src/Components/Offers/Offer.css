@@ -1,43 +1,135 @@
-.offers{
-    width: 65%;
-    height: 60vh;
+.offers {
+    width: 90%; /* Adjusted width for better responsiveness */
+    height: auto; /* Height adjusted to auto for flexibility */
     display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
     margin: auto;
-    padding: 0px 140px;
-    margin-bottom: 150px;
-    background: linear-gradient(180deg, #fde1ff, #e1ffea 60%);
-}
-.offers-left{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.offers-left h1{
-    color: #171717;
-    font-size: 80px;
-    font-weight: 600;
-}
-.offers-left p{
-    color: #171717;
-    font-size: 22px;
-    font-weight: 600;
-}
-.offers-left button{
-    width: 282px;
-    height: 70px;
-    border-radius: 35px;
-    background: #ff4141;
-    border:none ; color: white;
-    font-size: 22px;
-    font-weight: 500;
-    margin-top: 30px;
-    cursor: pointer;
-}
-.offer-right{
+    padding: 20px; /* Adjusted padding for better spacing on smaller screens */
+    margin-bottom: 100px; /* Reduced margin for smaller screens */
+    background: linear-gradient(180deg, #fde1ff, #e1ffea 60%), url('../Assets/exclusive_icon.png');
+    background-size: cover; /* Ensure background image covers the container */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+  }
+  
+  .offers-left, .offer-right {
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    padding-top: 30px;
-}
+    justify-content: center;
+    padding: 20px; /* Added padding for better spacing */
+  }
+  
+  /* Center content in .offers-left and .offer-right */
+  .offers-left {
+    flex-direction: column;
+    text-align: center; /* Center text in .offers-left */
+  }
+  
+  .offers-left h1 {
+    color: #171717;
+    font-size: 4rem; /* Adjusted font size for responsiveness */
+    font-weight: 600;
+  }
+  
+  .offers-left p {
+    color: #171717;
+    font-size: 1.25rem; /* Adjusted font size for better readability */
+    font-weight: 600;
+  }
+  
+  .offers-left button {
+    width: 100%;
+    max-width: 282px; /* Ensure button does not exceed this width */
+    height: 70px;
+    border-radius: 35px;
+    background: #ff4141;
+    border: none;
+    color: white;
+    font-size: 1.25rem; /* Adjusted font size for better readability */
+    font-weight: 500;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+  
+  .offer-right img {
+    width: 250px; /* Adjusted size for the image */
+    height: 300px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .offers-left h1 {
+      font-size: 3rem; /* Reduced font size for medium screens */
+    }
+  
+    .offers-left p {
+      font-size: 1rem; /* Reduced font size for medium screens */
+    }
+  
+    .offers-left button {
+      max-width: 100%; /* Ensure button is responsive */
+      font-size: 1rem; /* Adjusted font size for medium screens */
+    }
+  
+    .offer-right img {
+      width: 200px; /* Reduced image size for medium screens */
+      height: 250px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .offers {
+      padding: 20px; /* Reduced padding for smaller screens */
+      margin-bottom: 80px; /* Further reduced margin */
+    }
+  
+    .offers-left {
+      text-align: center; /* Center text on smaller screens */
+      padding: 0; /* Remove padding on smaller screens */
+    }
+  
+    .offers-left h1 {
+      font-size: 2.5rem; /* Further reduced font size for small screens */
+    }
+  
+    .offers-left p {
+      font-size: 0.875rem; /* Further reduced font size for small screens */
+    }
+  
+    .offers-left button {
+      max-width: 100%; /* Ensure button width adjusts */
+      font-size: 0.875rem; /* Further reduced font size */
+    }
+  
+    .offer-right {
+      display: flex;
+      justify-content: center; /* Center image on smaller screens */
+      padding: 0; /* Remove padding on smaller screens */
+    }
+  
+    .offer-right img {
+      width: 150px; /* Further reduced image size for small screens */
+      height: 200px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .offers-left h1 {
+      font-size: 2rem; /* Smaller font size for very small screens */
+    }
+  
+    .offers-left p {
+      font-size: 0.75rem; /* Smaller font size for very small screens */
+    }
+  
+    .offers-left button {
+      font-size: 0.75rem; /* Smaller font size for very small screens */
+    }
+  
+    .offer-right img {
+      width: 120px; /* Further reduced image size for very small screens */
+      height: 160px;
+    }
+  }
+  

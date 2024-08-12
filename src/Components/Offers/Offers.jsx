@@ -12,10 +12,11 @@ const Offers = () => {
             <button>Check Now</button>
         </div>
         <div className="offer-right">
-            <img src={exclusive_icon} alt="" style={{width:"300px", height:"400px"}} />
+            <img src={exclusive_icon} alt="" style={{width:"250px", height:"300px"}} />
         </div>
     </div>
   )
 }
+
 
 export default Offers

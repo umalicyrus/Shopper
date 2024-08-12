@@ -1,23 +1,138 @@
-.popular{
+
+.popular {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    height: 90vh;
-}
-.popular h1{
+    gap: 20px; /* Increase gap for better spacing */
+    padding: 20px; /* Add padding for better spacing */
+  }
+  
+  .popular h1 {
     color: #171717;
-    font-size: 50px;
+    font-size: 50px; /* Default font size */
     font-weight: 600;
-}
-.popular hr{
+    text-align: center; /* Center align heading */
+    margin: 0; /* Remove default margin */
+  }
+  
+  .popular hr {
     width: 200px;
     height: 6px;
     border-radius: 10px;
-    background:#252525;
-}
-.popular-item{
-    margin-top: 50px;
+    background: #252525;
+    margin: 20px 0; /* Add margin to separate from text and items */
+  }
+  
+  /* Base styles for .popular-item */
+  .popular-item {
+    display: grid; /* Use grid layout for item organization */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto-fit columns */
+    gap: 30px; /* Space between items */
+    width: 100%; /* Full width for responsiveness */
+    padding: 20px; /* Padding around the item grid */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+  }
+  
+  /* Base styles for each item */
+  .popular-item .item {
     display: flex;
-    gap: 30px;
-}
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Hide overflowing content */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+    padding: 10px; /* Padding inside item */
+    background: #fff; /* White background */
+  }
+  
+  .popular-item .item:hover {
+    transform: translateY(-5px); /* Lift item on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+  }
+  
+  .popular-item img {
+    width: 100%; /* Ensure image fits the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Crop image to fit the container */
+    border-bottom: 1px solid #ddd; /* Border between image and text */
+  }
+  
+  /* Item details styling */
+  .item-details {
+    text-align: center; /* Center align text */
+    padding: 10px 0; /* Padding above and below text */
+  }
+  
+  .item-name {
+    font-size: 18px; /* Font size for item name */
+    font-weight: 600; /* Bold item name */
+    color: #333; /* Dark color for better readability */
+    margin: 0; /* Remove default margin */
+  }
+  
+  .item-price {
+    margin: 5px 0; /* Margin above and below prices */
+  }
+  
+  .item-price .new-price {
+    font-size: 16px; /* Font size for new price */
+    font-weight: 600; /* Bold new price */
+    color: #ff4141; /* Red color for new price */
+  }
+  
+  .item-price .old-price {
+    font-size: 14px; /* Font size for old price */
+    text-decoration: line-through; /* Strikethrough old price */
+    color: #aaa; /* Light color for old price */
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 1024px) {
+    .popular h1 {
+      font-size: 40px; /* Adjust font size for medium screens */
+    }
+  
+    .popular hr {
+      width: 150px; /* Adjust width for medium screens */
+    }
+  
+    .popular-item {
+      gap: 20px; /* Reduce gap for medium screens */
+      grid-template-columns: repeat(3, 1fr); /* Three columns on medium screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .popular {
+      padding: 15px; /* Adjust padding for smaller screens */
+    }
+  
+    .popular h1 {
+      font-size: 30px; /* Adjust font size for smaller screens */
+    }
+  
+    .popular hr {
+      width: 120px; /* Adjust width for smaller screens */
+    }
+  
+    .popular-item {
+      gap: 15px; /* Reduce gap for smaller screens */
+      grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .popular h1 {
+      font-size: 24px; /* Adjust font size for very small screens */
+    }
+  
+    .popular hr {
+      width: 100px; /* Adjust width for very small screens */
+    }
+  
+    .popular-item {
+      gap: 10px; /* Reduce gap for very small screens */
+      grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+  }
+  

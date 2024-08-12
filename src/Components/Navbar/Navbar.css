@@ -1,19 +1,25 @@
+/* Base styles for the navbar */
 .navbar {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px;
   box-shadow: 0 1px 3px -2px black;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
+
 .nav-logo {
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
 .nav-logo p {
   color: #171717;
   font-size: 38px;
   font-weight: 600;
 }
+
 .nav-menu {
   display: flex;
   align-items: center;
@@ -22,8 +28,11 @@
   color: #626262;
   font-size: 20px;
   font-weight: 500;
+  margin: 0;
+  padding: 0;
 }
 
+/* Base styles for the menu items */
 .nav-menu li {
   display: flex;
   flex-direction: column;
@@ -31,19 +40,43 @@
   justify-content: center;
   gap: 3px;
   cursor: pointer;
+  position: relative;
+  list-style: none; /* Ensure there are no default list styles */
+  padding: 10px 0; /* Add padding for spacing */
 }
-.nav-menu hr {
-  border: none;
+
+/* Remove any default underline or border */
+.nav-menu li a {
+  color: #626262; /* Default link color */
+  text-decoration: none; /* Ensure no underline */
+  padding: 10px; /* Add padding for clickable area */
+}
+
+/* Add the red underline only for the active menu item */
+.nav-menu li.active a {
+  color: #171717; /* Active link color */
+  font-weight: bold; /* Optional: make active item bold */
+}
+
+/* Red line styling for the active menu item */
+.nav-menu li.active::after {
+  content: '';
+  display: block;
   width: 80%;
   height: 3px;
-  border-radius: 10px;
-  background: #ff4141;
+  background: #ff4141; /* Red underline color */
+  border-radius: 10px; /* Optional: rounded corners */
+  position: absolute;
+  bottom: -5px; /* Position the underline 5px below the text */
+  left: 50%;
+  transform: translateX(-50%); /* Center the underline */
 }
 
 .nav-login-cart {
   display: flex;
   align-items: center;
   gap: 45px;
+  position: relative; /* Ensure this is relative to position .cart-container */
 }
 
 .nav-login-cart button {
@@ -58,27 +91,137 @@
   background-color: white;
   cursor: pointer;
 }
+
 .nav-login-cart button:active {
   background-color: #f3f3f3;
 }
+
 .logo-img {
   width: 80px;
   height: 80px;
 }
-.cart-icon {
-  width: 30px;
-  height: 30px;
+
+.cart-container {
+  position: relative; /* Positioning context for the cart icon and cart count */
 }
+
+.cart-icon {
+  width: 40px;
+  height: 40px;
+}
+
 .nav-cart-count {
+  position: absolute;
+  top: -5px; /* Adjust as needed */
+  right: -5px; /* Adjust as needed */
   width: 22px;
   height: 22px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -35px;
-  margin-left: -55px;
   border-radius: 11px;
   font-size: 14px;
   background-color: red;
   color: white;
+  z-index: 10; /* Ensure it is above other elements */
+}
+
+/* Toggle button styles */
+.nav-toggle {
+  display: none; /* Hide by default */
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 1115px) {
+  .nav-toggle {
+    display: block; /* Show toggle button on screens smaller than 1115px */
+  }
+  
+  .nav-menu {
+    display: none; /* Hide menu by default on smaller screens */
+    flex-direction: column;
+    gap: 20px;
+    font-size: 16px;
+    width: 100%; /* Ensure it spans the full width */
+    padding: 20px;
+    background: #fff; /* Ensure background for better visibility */
+  }
+
+  .nav-menu.open {
+    display: flex; /* Show menu when toggle is active */
+  }
+
+  .nav-login-cart {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .nav-login-cart button {
+    width: 120px;
+    height: 45px;
+    font-size: 16px;
+  }
+
+  .logo-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .cart-container {
+    position: relative; /* Ensure correct positioning context */
+  }
+
+  .cart-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .nav-cart-count {
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    top: -4px; /* Adjusted for smaller screen */
+    right: -4px; /* Adjusted for smaller screen */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-menu {
+    font-size: 14px;
+  }
+
+  .nav-login-cart {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .nav-login-cart button {
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .logo-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cart-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .nav-cart-count {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    top: -3px; /* Adjusted for very small screens */
+    right: -3px; /* Adjusted for very small screens */
+  }
 }
