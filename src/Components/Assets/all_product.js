@@ -1,5 +1,5 @@
-import p1_img from './products_1.png';
-import p2_img from './products_2.png';
+import p1_img from './p1_img.jpg';
+import p12_img from './p12_img.jpg';
 let all_product = [
   {
     id: 1,
@@ -13,8 +13,9 @@ let all_product = [
     id: 2,
     name: 'Striped Fluter Sleeves Overlap Collar Peplum Hem Blouse',
     category: 'men',
-    images: p1_img,
+    images: p12_img,
     new_price: 60.0,
     old_price: 70.5,
   },
 ];
+export default all_product;
