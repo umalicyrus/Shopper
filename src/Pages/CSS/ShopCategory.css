@@ -42,7 +42,7 @@
 }
 
 .shopcategory-products {
-    margin: 20px auto; /* Center align with auto margins */
+    margin: 10px 50px; /* Center align with auto margins */
     padding: 0 20px; /* Add padding for smaller screens */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid columns */

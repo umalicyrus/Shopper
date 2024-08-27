@@ -1,0 +1,111 @@
+/* Existing styles */
+.descriptionbox {
+    margin: 60px 170px;
+}
+
+.descriptionbox-navigator {
+    display: flex;
+}
+
+.decriptionbox-nav-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+    width: 160px;
+    height: 50px;
+    border: 1px solid #d0d0d0;
+}
+
+.decriptionbox-nav-box.fade {
+    background: #FBFBFB;
+    color: #555;
+}
+
+.descriptionbox-description {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px;
+    padding-bottom: 20px;
+    border: 1px solid #D0D0D0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .descriptionbox {
+        margin: 60px 100px;
+    }
+
+    .descriptionbox-navigator {
+        flex-direction: row;
+        flex-wrap: wrap; /* Allows navigation boxes to wrap onto the next line if needed */
+    }
+
+    .decriptionbox-nav-box {
+        width: 140px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 992px) {
+    .descriptionbox {
+        margin: 60px 50px;
+    }
+
+    .descriptionbox-navigator {
+        flex-direction: flex; /* Stack navigation boxes vertically */
+        align-items: left; /* Center align vertically stacked boxes */
+    }
+
+    .decriptionbox-nav-box {
+        width: 120px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .descriptionbox {
+        margin: 30px 20px;
+    }
+
+    .descriptionbox-navigator {
+        flex-direction: flex; /* Stack navigation boxes vertically */
+        align-items: left; /* Center align vertically stacked boxes */
+    }
+
+    .decriptionbox-nav-box {
+        width: 100px;
+        height: 35px;
+        font-size: 12px;
+    }
+
+    .descriptionbox-description {
+        gap: 15px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .descriptionbox {
+        margin: 20px 10px;
+    }
+
+    .descriptionbox-navigator {
+        flex-direction: flex; /* Stack navigation boxes vertically */
+        align-items: left; /* Center align vertically stacked boxes */
+    }
+
+    .decriptionbox-nav-box {
+        width: 80px;
+        height: 30px;
+        font-size: 10px;
+    }
+
+    .descriptionbox-description {
+        gap: 10px;
+        padding: 10px;
+    }
+}
