@@ -24,7 +24,7 @@ export const Shopcategory = (props) => {
             key={i} 
             id={item.id} 
             name={item.name} 
-            image={item.images} 
+            image={item.image} 
             new_price={item.new_price} 
             old_price={item.old_price}/>
           }
