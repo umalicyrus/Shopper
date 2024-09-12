@@ -4,10 +4,12 @@ import './Navbar.css';
 
 import logo from '../Assets/logo.png';
 import cart_icon from '../Assets/cart_icon.png';
+import { ShopContext } from '../../Context/ShopContext';
 
 export const Navbar = () => {
   const [menu, setMenu] = React.useState('shop');
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const {getTotalCartItems} = React.useContext(ShopContext);
 
   const handleToggle = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -71,7 +73,7 @@ export const Navbar = () => {
           <Link to="/cart">
             <img src={cart_icon} className="cart-icon" alt="Cart" />
           </Link>
-          <div className="nav-cart-count">0</div>
+          <div className="nav-cart-count">{getTotalCartItems()}</div>
         </div>
       </div>
     </div>
